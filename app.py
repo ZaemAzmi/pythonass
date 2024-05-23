@@ -2,7 +2,7 @@ from flask import Flask, render_template, send_from_directory
 import os
 from eda import run_eda, output_dir
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 # Run EDA only once
 if not os.path.exists(output_dir) or not os.listdir(output_dir):
