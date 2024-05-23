@@ -59,6 +59,7 @@ nav ul li a:hover {
   overflow: hidden;
   margin: 0 auto;
   padding-bottom: 2rem;
+  position: relative;
 }
 
 .carousel {
@@ -93,6 +94,16 @@ nav ul li a:hover {
 .carousel-item:hover {
   background-color: rgba(247, 247, 247, 0.4);
   color: black;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: aqua; 
+  transition: width 0.3s ease; 
 }
 
 /* Accordion */

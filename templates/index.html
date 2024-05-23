@@ -59,6 +59,7 @@
                 <div>Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. The company's primary business is its subscription-based streaming service, offering online streaming of a library of films and television series.</div>
             </a>
         </div>
+        <div class="progress-bar"></div>
     </div>
 
     <div style="width: 100%; overflow: hidden; padding:2rem 0;">
@@ -129,7 +130,7 @@
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2; //scroll-fast
+            const walk = (x - startX) * 2;
             carousel.scrollLeft = scrollLeft - walk;
         });
 
@@ -137,21 +138,24 @@
             const carousel = document.querySelector('.carousel');
             const items = carousel.querySelectorAll('.carousel-item');
 
-            // Clone items and append them to the end of the carousel
             items.forEach(item => {
                 const clone = item.cloneNode(true);
                 carousel.appendChild(clone);
             });
 
-            // Configure scroll behavior
             carousel.addEventListener('scroll', () => {
                 if (carousel.scrollLeft === carousel.scrollWidth - carousel.clientWidth) {
-                    // If scrolled to the end, scroll back to the beginning
                     carousel.scrollTo({ left: 0, behavior: 'smooth' });
                 }
             });
         });
 
+        const progressBar = document.querySelector('.progress-bar');
+
+        carousel.addEventListener('scroll', () => {
+            const scrollPercentage = (carousel.scrollLeft / (carousel.scrollWidth - carousel.clientWidth)) * 100;
+            progressBar.style.width = `${scrollPercentage}%`;
+        });
 
         document.querySelectorAll('.accordion-button').forEach(button => {
             button.addEventListener('click', () => {
