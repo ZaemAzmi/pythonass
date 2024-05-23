@@ -60,7 +60,7 @@ def perform_eda(df, dataset_name):
     print(f"Saved Candlestick chart for {dataset_name} at {file_path}")
 
 def run_eda():
-    datasets_path = "pythonass/datasets/"
+    datasets_path = "datasets/"
     dataset_names = ['Amazon', 'Apple', 'Google', 'Microsoft', 'Netflix']
     datasets_files = ['Amazon.csv', 'Apple.csv', 'Google.csv', 'Microsoft.csv', 'Netflix.csv']
 
