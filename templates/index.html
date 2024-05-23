@@ -8,29 +8,160 @@
 
 </head>
 <body>
-    <div class="test">
-        <h1>Stock Analysis</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/amazon">Amazon</a></li>
+            <li><a href="/apple">Apple</a></li>
+            <li><a href="/microsoft">Microsoft</a></li>
+            <li><a href="/google">Google</a></li>
+            <li><a href="/netflix">Netflix</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="hero-text">
+            <h1>Stock Analysis</h1>
+            <p>Your one-stop destination for everything tech.</p>
+        </div>
     </div>
 
-    <h2>Amazon</h2>
-    <img src="/images/Amazon_summary.png" alt="Amazon Summary">
-    <iframe src="/images/Amazon_candlestick.html" width="100%" height="600"></iframe>
+    <div class="component-title">
+        <h1>Stock Analysis By Company</h1>
+        <p>Your one-stop destination for everything tech.</p>
+    </div>
 
-    <h2>Apple</h2>
-    <img src="/images/Apple_summary.png" alt="Apple Summary">
-    <iframe src="/images/Apple_candlestick.html" width="100%" height="600"></iframe>
+    <div class="carousel-container">
+        <div class="carousel">
+            <a class="carousel-item" style="text-decoration: none;" href="/amazon">
+                <img src="/static/company-carousel/amazon.jpg" class="carousel-image" alt="Amazon Logo">
+                <h2>Amazon</h2>
+                <div>Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington. It focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook.</div>
+            </a>
+            <a class="carousel-item" style="text-decoration: none;" href="/apple">
+                <img src="/static/company-carousel/apple.png" class="carousel-image" alt="Apple Logo">
+                <h2>Apple</h2>
+                <div>Apple Inc. is an American multinational technology company headquartered in Cupertino, California. It designs, develops, and sells consumer electronics, computer software, and online services. Apple is one of the largest technology companies in the world, ranking first in terms of revenue.</div>
+            </a>
+            <a class="carousel-item" style="text-decoration: none;" href="/microsoft">
+                <img src="/static/company-carousel/microsoft.webp" class="carousel-image" alt="Microsoft Logo">
+                <h2>Microsoft</h2>
+                <div>Microsoft Corporation is an American multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services. It is best known for its software products like the Microsoft Windows line of operating systems.</div>
+            </a>
+            <a class="carousel-item" style="text-decoration: none;" href="/google">
+                <img src="/static/company-carousel/google.webp" class="carousel-image" alt="Google Logo">
+                <h2>Google</h2>
+                <div>Google is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University in California.</div>
+            </a>
+            <a class="carousel-item" style="text-decoration: none;" href="/netflix">
+                <img src="/static/company-carousel/netflix.jpg" class="carousel-image" alt="Netflix Logo">
+                <h2>Netflix</h2>
+                <div>Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. The company's primary business is its subscription-based streaming service, offering online streaming of a library of films and television series.</div>
+            </a>
+        </div>
+    </div>
 
-    <h2>Google</h2>
-    <img src="/images/Google_summary.png" alt="Google Summary">
-    <iframe src="/images/Google_candlestick.html" width="100%" height="600"></iframe>
+    <div style="width: 100%; overflow: hidden; padding:2rem 0;">
+        <div style="width: 60vh; float: left;">
+            <div class="component-title">
+                <h1>Let Us Answer Your Doubt</h1>
+                <p>Your one-stop destination for everything tech.</p>
+            </div>
+        </div>
+        <div class="accordion" style="margin-left: 70vh;">
+            <div class="accordion-item">
+                <button class="accordion-button">Data importing and cleaning</button>
+                <div class="accordion-content">
+                    <p>Gather historical stock market data from financial APIs or websites. Clean the data by handling missing values and adjusting for stock splits or dividends.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">Data manipulating</button>
+                <div class="accordion-content">
+                    <p>Calculate technical indicators like moving averages, relative strength index (RSI), and create lagged features.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">Exploratory data analysis</button>
+                <div class="accordion-content">
+                    <p>Visualize stock price movements, examine correlations between stocks or market indices, and identify trends or patterns.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">Hypothesis testing</button>
+                <div class="accordion-content">
+                    <p>Test hypotheses related to market efficiency or the impact of specific events on stock prices.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-button">Predictive analysis</button>
+                <div class="accordion-content">
+                    <p>Build models (e.g., time series models, machine learning algorithms) to predict future stock prices or market movements</p>
+                </div>
+            </div>
+        </div>
+   </div>
 
-    <h2>Microsoft</h2>
-    <img src="/images/Microsoft_summary.png" alt="Microsoft Summary">
-    <iframe src="/images/Microsoft_candlestick.html" width="100%" height="600"></iframe>
+    <script>      
+        const carousel = document.querySelector('.carousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-    <h2>Netflix</h2>
-    <img src="/images/Netflix_summary.png" alt="Netflix Summary">
-    <iframe src="/images/Netflix_candlestick.html" width="100%" height="600"></iframe>
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carousel.classList.add('active');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
 
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+            carousel.classList.remove('active');
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+            carousel.classList.remove('active');
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; //scroll-fast
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const items = carousel.querySelectorAll('.carousel-item');
+
+            // Clone items and append them to the end of the carousel
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                carousel.appendChild(clone);
+            });
+
+            // Configure scroll behavior
+            carousel.addEventListener('scroll', () => {
+                if (carousel.scrollLeft === carousel.scrollWidth - carousel.clientWidth) {
+                    // If scrolled to the end, scroll back to the beginning
+                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const isOpen = content.style.display === 'block';
+                content.style.display = isOpen ? 'none' : 'block';
+                button.classList.toggle('closed', !isOpen);
+            });
+        });
+
+    </script>
 </body>
 </html>

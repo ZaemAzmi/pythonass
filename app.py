@@ -15,6 +15,26 @@ else:
 def index():
     return render_template('index.html')
 
+@app.route('/amazon')
+def amazon():
+    return render_template('amazon.html')
+
+@app.route('/apple')
+def apple():
+    return render_template('apple.html')
+
+@app.route('/microsoft')
+def microsoft():
+    return render_template('microsoft.html')
+
+@app.route('/google')
+def google():
+    return render_template('google.html')
+
+@app.route('/netflix')
+def netflix():
+    return render_template('netflix.html')
+
 @app.route('/images/<filename>')
 def images(filename):
     return send_from_directory('templates/images', filename)
