@@ -50,6 +50,16 @@ nav ul li a:hover {
   position: relative;
 }
 
+.hero-title{
+  font-size: 4rem;
+  font-weight: bold;
+  margin-block: 20px;
+  margin-inline: 50px;
+  background: linear-gradient(to bottom left, rgb(1, 238, 255), rgb(115, 1, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .hero-banner .hero-text {
   display: inline-block;
   padding: 1em;
@@ -85,6 +95,15 @@ nav ul li a:hover {
   user-select: none; 
   border: 2px solid white;
   border-radius: 25px;
+}
+
+.carousel div:hover{
+  color:aqua;
+}
+
+.carousel-content{
+  text-align: justify;
+  padding-bottom: 2rem;
 }
 
 .carousel-image {
@@ -153,7 +172,38 @@ nav ul li a:hover {
 }
 
 .component-title{
-  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-align: center;
-  padding: 2rem;
+  padding-bottom: 50px !important;
+  padding-top: 50px !important;
+  background: linear-gradient(to bottom left, rgb(1, 238, 255), rgb(115, 1, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accordion-component-title{
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-block: 20px !important;
+  background: linear-gradient(to bottom left, rgb(1, 238, 255), rgb(115, 1, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.see-more{
+  text-align: end;
+  color:aqua;
+}
+
+.see-more .see-more-icon a:hover{
+  color:blueviolet;
+}
+
+.see-more-icon {
+  margin-left: 5px; 
+  width: 1em; 
+  height: 1em; 
+  fill: currentColor; 
 }

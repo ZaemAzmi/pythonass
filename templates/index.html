@@ -20,9 +20,9 @@
     </nav>
 
     <div class="hero-banner">
-        <div class="hero-text">
-            <h1>Stock Analysis</h1>
-            <p>Your one-stop destination for everything tech.</p>
+        <div class="hero-text" style="border: 1px; border-radius: 25px; background-color:rgba(247, 247, 247, 0.3);">
+            <p class="hero-title">Stock Analysis</p>
+            <p style="font-size: 1.5rem">Your one-stop destination for everything tech.</p>
         </div>
     </div>
 
@@ -33,40 +33,70 @@
 
     <div class="carousel-container">
         <div class="carousel">
-            <a class="carousel-item" style="text-decoration: none;" href="/amazon">
+            <div class="carousel-item" style="text-decoration: none;">
                 <img src="/static/company-carousel/amazon.jpg" class="carousel-image" alt="Amazon Logo">
-                <h2>Amazon</h2>
-                <div>Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington. It focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook.</div>
-            </a>
-            <a class="carousel-item" style="text-decoration: none;" href="/apple">
+                <div style="font-size: 1.5rem; font-weight:bold; margin-block:30px;">Amazon</div>
+                <div class="carousel-content">Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington. It focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Microsoft, and Facebook.</div>
+                <div class="see-more" >
+                    <a class="see-more" href="/amazon">
+                        See More
+                        <img src="/static/arrow.svg" alt="arrow right icon" class="see-more-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" style="text-decoration: none;">
                 <img src="/static/company-carousel/apple.png" class="carousel-image" alt="Apple Logo">
-                <h2>Apple</h2>
-                <div>Apple Inc. is an American multinational technology company headquartered in Cupertino, California. It designs, develops, and sells consumer electronics, computer software, and online services. Apple is one of the largest technology companies in the world, ranking first in terms of revenue.</div>
-            </a>
-            <a class="carousel-item" style="text-decoration: none;" href="/microsoft">
+                <div style="font-size: 1.5rem; font-weight:bold; margin-block:30px;">Apple</div>
+                <div class="carousel-content">Apple Inc. is an American multinational technology company headquartered in Cupertino, California. It designs, develops, and sells consumer electronics, computer software, and online services. Apple is one of the largest technology companies in the world, ranking first in terms of revenue.</div>
+                <div class="see-more" >
+                    <a class="see-more" href="/apple">
+                        See More
+                        <img src="/static/arrow.svg" alt="arrow right icon" class="see-more-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" style="text-decoration: none;">
                 <img src="/static/company-carousel/microsoft.webp" class="carousel-image" alt="Microsoft Logo">
-                <h2>Microsoft</h2>
-                <div>Microsoft Corporation is an American multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services. It is best known for its software products like the Microsoft Windows line of operating systems.</div>
-            </a>
-            <a class="carousel-item" style="text-decoration: none;" href="/google">
+                <div style="font-size: 1.5rem; font-weight:bold; margin-block:30px;">Microsoft</div>
+                <div class="carousel-content">Microsoft Corporation is an American multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services. It is best known for its software products like the Microsoft Windows line of operating systems.</div>
+                <div class="see-more" >
+                    <a class="see-more" href="/microsoft">
+                        See More
+                        <img src="/static/arrow.svg" alt="arrow right icon" class="see-more-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" style="text-decoration: none;">
                 <img src="/static/company-carousel/google.webp" class="carousel-image" alt="Google Logo">
-                <h2>Google</h2>
-                <div>Google is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University in California.</div>
-            </a>
-            <a class="carousel-item" style="text-decoration: none;" href="/netflix">
+                <div style="font-size: 1.5rem; font-weight:bold; margin-block:30px;">Google</div>
+                <div class="carousel-content">Google is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. Google was founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University in California.</div>
+                <div class="see-more" >
+                    <a class="see-more" href="/google">
+                        See More
+                        <img src="/static/arrow.svg" alt="arrow right icon" class="see-more-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item" style="text-decoration: none;">
                 <img src="/static/company-carousel/netflix.jpg" class="carousel-image" alt="Netflix Logo">
-                <h2>Netflix</h2>
-                <div>Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. The company's primary business is its subscription-based streaming service, offering online streaming of a library of films and television series.</div>
-            </a>
+                <div style="font-size: 1.5rem; font-weight:bold; margin-block:30px;">Netflix</div>
+                <div class="see-more" >Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. The company's primary business is its subscription-based streaming service, offering online streaming of a library of films and television series.</div>
+                <div class="see-more" >
+                    <a class="see-more" href="/netflix">
+                        See More
+                        <img src="/static/arrow.svg" alt="arrow right icon" class="see-more-icon">
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="progress-bar"></div>
     </div>
 
     <div style="width: 100%; overflow: hidden; padding:2rem 0;">
         <div style="width: 60vh; float: left;">
-            <div class="component-title">
-                <h1>Let Us Answer Your Doubt</h1>
-                <p>Your one-stop destination for everything tech.</p>
+            <div style="padding-inline: 30px;">
+                <p class="accordion-component-title">WHAT IS OUR CONTENT?</p>
+                <p style="font-size: 1.5rem; color:white; text-align: center;">Your one-stop destination for everything tech.</p>
             </div>
         </div>
         <div class="accordion" style="margin-left: 70vh;">
