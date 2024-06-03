@@ -5,48 +5,74 @@ import plotly.graph_objs as go
 import plotly.io as pio
 import os
 
-# Ensure the directory exists
+# Ensure the output directory exists
 output_dir = os.path.abspath('templates/images')
 os.makedirs(output_dir, exist_ok=True)
 
 def perform_eda(df, dataset_name):
     print(f"\n\nPerforming EDA for {dataset_name}")
+    
+      # 1. Time Series Visualization
+    plt.figure(figsize=(14, 6))
+    plt.plot(df.index, df['Close'], label='Close Price', color='cyan')
+    plt.title(f'{dataset_name} - Close Price Over Time', color='white')
+    plt.xlabel('Date', color='white')
+    plt.ylabel('Price', color='white')
+    plt.legend()
+    plt.grid(True, linestyle='--', linewidth=0.5, color='grey')
+    plt.gca().set_facecolor('black')
+    plt.gcf().set_facecolor('black')
+    plt.tick_params(colors='white')
+    file_path = os.path.join(output_dir, f'{dataset_name}_close_price.png')
+    plt.savefig(file_path, facecolor='black')
+    plt.close()
+    print(f"Saved Close Price plot for {dataset_name} at {file_path}")
 
-    # Create a figure with subplots
-    fig, axs = plt.subplots(2, 2, figsize=(14, 10))
-    fig.suptitle(f'{dataset_name} - Stock Analysis')
+    # # 2. Bollinger Bands
+    # df['MA20'] = df['Close'].rolling(window=20).mean()
+    # df['stddev'] = df['Close'].rolling(window=20).std()
+    # df['Upper'] = df['MA20'] + (df['stddev'] * 2)
+    # df['Lower'] = df['MA20'] - (df['stddev'] * 2)
 
-    # Time Series Visualization
-    axs[0, 0].plot(df.index, df['Close'], label='Close Price')
-    axs[0, 0].set_title('Close Price Over Time')
-    axs[0, 0].set_xlabel('Date')
-    axs[0, 0].set_ylabel('Price')
-    axs[0, 0].legend()
+    # plt.figure(figsize=(14, 6))
+    # plt.plot(df.index, df['Close'], label='Close Price', color='cyan')
+    # plt.plot(df.index, df['MA20'], label='20-Day MA', color='orange')
+    # plt.plot(df.index, df['Upper'], label='Upper Band', color='red')
+    # plt.plot(df.index, df['Lower'], label='Lower Band', color='red')
+    # plt.fill_between(df.index, df['Lower'], df['Upper'], color='gray', alpha=0.3)
+    # plt.title(f'{dataset_name} - Bollinger Bands')
+    # plt.xlabel('Date')
+    # plt.ylabel('Price')
+    # plt.legend()
+    # plt.grid(True, linestyle='--', linewidth=0.5)
+    # file_path = os.path.join(output_dir, f'{dataset_name}_bollinger_bands.png')
+    # plt.savefig(file_path)
+    # plt.close()
+    # print(f"Saved Bollinger Bands plot for {dataset_name} at {file_path}")
 
-    # Correlation Analysis
-    corr_matrix = df[['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']].corr()
-    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', ax=axs[0, 1])
-    axs[0, 1].set_title('Correlation Matrix')
-
-    # Pattern Identification
+    # 3. Pattern Identification: Moving Averages
+    
     df['MA50'] = df['Close'].rolling(window=50).mean()
     df['MA200'] = df['Close'].rolling(window=200).mean()
-    axs[1, 0].plot(df.index, df['Close'], label='Close Price')
-    axs[1, 0].plot(df.index, df['MA50'], label='50-Day MA', color='orange')
-    axs[1, 0].plot(df.index, df['MA200'], label='200-Day MA', color='red')
-    axs[1, 0].set_title('Stock Close Price and Moving Averages')
-    axs[1, 0].set_xlabel('Date')
-    axs[1, 0].set_ylabel('Price')
-    axs[1, 0].legend()
+    plt.figure(figsize=(14, 6))
+    plt.plot(df.index, df['Close'], label='Close Price', color='cyan')
+    plt.plot(df.index, df['MA50'], label='50-Day MA', color='orange')
+    plt.plot(df.index, df['MA200'], label='200-Day MA', color='red')
+    plt.title(f'{dataset_name} - Close Price and Moving Averages', color='white')
+    plt.xlabel('Date', color='white')
+    plt.ylabel('Price', color='white')
+    plt.legend()
+    plt.grid(True, linestyle='--', linewidth=0.5, color='grey')
+    plt.gca().set_facecolor('black')   # Set the background color of the plot area
+    plt.gcf().set_facecolor('black')   # Set the background color of the figure
+    plt.tick_params(colors='white')    # Set the tick parameters to be white for visibility
 
-    # Save the figure
-    file_path = os.path.join(output_dir, f'{dataset_name}_summary.png')
-    fig.tight_layout(rect=[0, 0, 1, 0.96])
-    fig.savefig(file_path)
+    file_path = os.path.join(output_dir, f'{dataset_name}_moving_averages.png')
+    plt.savefig(file_path, facecolor='black')
     plt.close()
-    print(f"Saved summary plot for {dataset_name} at {file_path}")
+    print(f"Saved Moving Averages plot for {dataset_name} at {file_path}")
 
-    # Advanced Visualization: Candlestick Chart
+    # 4. Candlestick Chart using Plotly with Dark Background
     file_path = os.path.join(output_dir, f'{dataset_name}_candlestick.html')
     fig = go.Figure(data=[go.Candlestick(x=df.index,
                                          open=df['Open'],
@@ -55,9 +81,14 @@ def perform_eda(df, dataset_name):
                                          close=df['Close'])])
     fig.update_layout(title=f'{dataset_name} - Candlestick Chart',
                       xaxis_title='Date',
-                      yaxis_title='Price')
+                      yaxis_title='Price',
+                      template='plotly_dark')
     pio.write_html(fig, file_path)
     print(f"Saved Candlestick chart for {dataset_name} at {file_path}")
+
+# apple_data = pd.read_csv('datasets/Apple.csv', parse_dates=['Date'])
+# def run_eda():
+#     perform_eda(apple_data, 'Apple')
 
 def run_eda():
     datasets_path = "datasets/"
