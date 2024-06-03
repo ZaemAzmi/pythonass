@@ -18,17 +18,49 @@
         </ul>
     </nav>
 
-    <div class="hero-banner">
+    <div class="hero-banner" style="background: url('/static/company-carousel/google.webp');">
         <div class="hero-text">
             <h1>Google</h1>
             <p>Welcome to the Google page.</p>
         </div>
     </div>
 
-    <h2>Google</h2>
-    <img src="/images/Google_close_price.png" alt="Google Close Price">
-    <img src="/images/Google_moving_averages.png" alt="Google Moving Average">
-    <iframe src="/images/Google_candlestick.html" width="100%" height="600"></iframe>
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-button">Google Close Price</button>
+            <div class="accordion-content">
+                <img src="/images/Google_time_series.png" alt="Google Close Price">
+                <p>The close price chart plots the closing prices of an asset over a specified period, providing a clear visual representation of how the asset's price has changed over time. The closing price is the last price at which the asset traded during the trading period.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-button">Google Moving Averages</button>
+            <div class="accordion-content">
+                <img src="/images/Google_moving_averages.png" alt="Google Moving Average">
+                <p>A moving average chart overlays the moving averages on the price chart of an asset. Moving averages are calculated by averaging the closing prices of the asset over a specified number of periods, providing a smoothed representation of price trends and helping to identify the direction and strength of the trend.</p>
+            </div>
+        </div>
+      
+        <div class="accordion-item">
+            <button class="accordion-button">Google Candlestick Chart</button>
+            <div class="accordion-content">
+                <iframe src="/images/Google_candlestick.html" width="100%" height="600"></iframe>
+                <p>The candlestick chart is a popular financial chart used to represent price movements of a security, derivative, or currency over time. Each "candlestick" in the chart displays four key pieces of information: the open, high, low, and close prices for a specific time period (e.g., day, week, hour).</p>
+            </div>
+        </div>
+      
+    </div>
 
+    <script>      
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const isOpen = content.style.display === 'block';
+                content.style.display = isOpen ? 'none' : 'block';
+                button.classList.toggle('closed', !isOpen);
+            });
+        });
+
+    </script>
 </body>
 </html>
