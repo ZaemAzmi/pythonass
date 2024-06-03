@@ -38,27 +38,28 @@
             <button class="accordion-button">Amazon Close Price</button>
             <div class="accordion-content">
                 <img src="/images/Amazon_time_series" alt="Amazon Close Price">
-                <p>The close price chart plots the closing prices of an asset over a specified period, providing a clear visual representation of how the asset's price has changed over time. The closing price is the last price at which the asset traded during the trading period.</p>
+                <p>The close price chart plots the closing prices of Amazon's stock from 2000 to 2023, providing a clear visual representation of how the stock's price has changed over time. The closing price is the last price at which the stock traded during the trading period. This chart helps investors understand the historical performance of Amazon's stock and identify long-term trends, significant price movements, and periods of volatility.</p>
+                <p>By examining the close price over a long period, we can observe the growth trajectory of Amazon, detect patterns such as bullish or bearish trends, and identify any external events or market conditions that might have influenced the stock price. This insight is crucial for making informed investment decisions and understanding the company's financial health over the years.</p>
             </div>
         </div>
         <div class="accordion-item">
             <button class="accordion-button">Amazon Moving Averages</button>
             <div class="accordion-content">
                 <img src="/images/Amazon_moving_averages.png" alt="Amazon Moving Average">
-                <p>A moving average chart overlays the moving averages on the price chart of an asset. Moving averages are calculated by averaging the closing prices of the asset over a specified number of periods, providing a smoothed representation of price trends and helping to identify the direction and strength of the trend.</p>
+                <p>A moving average chart overlays the moving averages on the price chart of Amazon's stock. Moving averages are calculated by averaging the closing prices of the stock over a specified number of periods, such as 50 days or 200 days, providing a smoothed representation of price trends. This chart helps to identify the direction and strength of the trend, as well as potential reversal points.</p>
+                <p>Moving averages are essential tools in technical analysis. The simple moving average (SMA) and the exponential moving average (EMA) are commonly used. The SMA gives equal weight to all periods, while the EMA gives more weight to recent prices, making it more responsive to new information. Traders and investors use moving averages to filter out noise from random short-term price fluctuations and to confirm trend directions, which is vital for timing entry and exit points in the market.</p>
             </div>
         </div>
-      
         <div class="accordion-item">
             <button class="accordion-button">Amazon Candlestick Chart</button>
             <div class="accordion-content">
                 <iframe src="/images/Amazon_candlestick.html" width="100%" height="600"></iframe>
-                <p>The candlestick chart is a popular financial chart used to represent price movements of a security, derivative, or currency over time. Each "candlestick" in the chart displays four key pieces of information: the open, high, low, and close prices for a specific time period (e.g., day, week, hour).</p>
+                <p>The candlestick chart is a popular financial chart used to represent the price movements of Amazon's stock over time. Each "candlestick" in the chart displays four key pieces of information: the open, high, low, and close prices for a specific time period (e.g., day, week, hour). This type of chart provides more information than a simple line chart, offering a deeper insight into market sentiment and price action.</p>
+                <p>Each candlestick consists of a body and wicks (shadows). The body represents the range between the open and close prices, while the wicks show the highest and lowest prices during the period. A filled or colored body indicates a bearish period (close price lower than open), and an unfilled or white body indicates a bullish period (close price higher than open). Traders use candlestick patterns to predict future price movements and make trading decisions based on patterns like doji, hammer, and engulfing patterns, which indicate potential reversals or continuations in the market trend.</p>
             </div>
         </div>
-      
     </div>
-
+    
     <script>      
         document.querySelectorAll('.accordion-button').forEach(button => {
             button.addEventListener('click', () => {
