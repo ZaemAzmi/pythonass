@@ -163,8 +163,7 @@ nav ul li a:hover {
 .accordion-content {
   display: none;
   padding: 1em;
-  background-color: white;
-  opacity:0.3;
+  background-color: rgba(247, 247, 247, 0.3);
   border: 1px solid white;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -206,4 +205,12 @@ nav ul li a:hover {
   width: 1em; 
   height: 1em; 
   fill: currentColor; 
+}
+
+.company-description{
+  font-size: 1.2em; 
+  line-height: 1.6; 
+  color: #FFFFFF;
+  margin-inline: 20px;
+  margin-bottom: 40px
 }
